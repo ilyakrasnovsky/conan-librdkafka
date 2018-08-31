@@ -55,6 +55,8 @@ class LibrdkafkaConan(ConanFile):
                     cmake.definitions["WITHOUT_OPTIMIZATION"] = "ON"
                 if self.options.shared:
                     cmake.definitions["BUILD_SHARED_LIBS"] = "ON"
+                else:
+                    cmake.definitions["RDKAFKA_BUILD_STATIC"] = "1"
                 
                 # Enables overridding of default window build settings
                 cmake.definitions["WITHOUT_WIN32_CONFIG"] = "ON"

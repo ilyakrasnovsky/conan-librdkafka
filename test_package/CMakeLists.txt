@@ -13,7 +13,9 @@ find_package(ZLIB)
 message(INFO "libc++ =  ${LibRDKafka_LIBRARIES}")
 message(INFO "libc = ${LibRDKafka_C_LIBRARIES}")
 
+# also see https://github.com/edenhill/librdkafka/tree/master/packaging/cmake for static linking
 add_definitions(-DLIBRDKAFKA_STATICLIB)
+
 add_executable(example example.cpp)
 target_link_libraries(
   example
