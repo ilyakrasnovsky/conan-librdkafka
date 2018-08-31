@@ -22,8 +22,6 @@ class LibrdkafkaConan(ConanFile):
     folder_name = "{}-{}".format(name, src_version)
     archive_name = "{}.tar.gz".format(folder_name)
 
-    # For Windows use short paths (ignored for other OS's)
-    short_paths=True
 
     def source(self):
         tools.download(
@@ -57,7 +55,7 @@ class LibrdkafkaConan(ConanFile):
                     cmake.definitions["WITHOUT_OPTIMIZATION"] = "ON"
                 if self.options.shared:
                     cmake.definitions["BUILD_SHARED_LIBS"] = "ON"
-
+                
                 # Enables overridding of default window build settings
                 cmake.definitions["WITHOUT_WIN32_CONFIG"] = "ON"
 

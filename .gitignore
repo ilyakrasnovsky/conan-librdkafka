@@ -1,1 +1,11 @@
 __pycache__/
+
+
+# virtual environment
+/venv/
+
+# development process temporary directory
+/tmp/
+
+# vscode settings
+/.vscode/

@@ -4,6 +4,7 @@ import os
 
 class LibrdkafkaTestConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
+    build_requires = "cmake_installer/3.10.0@conan/stable"
     generators = "cmake"
 
     def build(self):
